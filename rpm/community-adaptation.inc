@@ -5,10 +5,14 @@ Version:        0.0.1
 Release:        1
 Provides:       community-adaptation
 Group:          System
+Source0:        %{name}-%{version}.tar.bz2
 Requires:	ssu
 
 %description
 %{summary}.
+
+%prep
+%setup -q -n %{name}-%{version}
 
 %install
 
