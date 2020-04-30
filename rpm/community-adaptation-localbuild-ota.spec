@@ -1,8 +1,8 @@
-%define flavour devel
+%define flavour localbuild-ota
 
 Conflicts: community-adaptation-testing
+Conflicts: community-adaptation-devel
 Conflicts: community-adaptation-localbuild
-Conflicts: community-adaptation-localbuild-ota
 
 %include rpm/community-adaptation.inc
 

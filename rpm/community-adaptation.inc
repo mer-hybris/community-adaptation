@@ -16,10 +16,11 @@ Requires:	ssu
 
 %install
 
-%if "%{flavour}" == "testing"
+%if "%{flavour}" == "testing" || "%{flavour}" == "localbuild-ota"
 touch $RPM_BUILD_ROOT/init_disable_telnet
 %endif
 
+%if "%{flavour}" != "localbuild-ota"
 mkdir -p $RPM_BUILD_ROOT/%{_datadir}/community-adaptation/
 
 %if "%{flavour}" != "localbuild"
@@ -41,6 +42,7 @@ sed -e "s|@FLAVOUR@|devel|g" \
     -e "s|sailfishos_%%(release)|sailfish_latest_%%(arch)|g" \
 %endif
     adaptation-community-common.ini > $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/adaptation-community-common.ini
+%endif
 
 %files
 %defattr(-,root,root,-)
