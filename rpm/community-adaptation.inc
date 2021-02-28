@@ -35,6 +35,7 @@ sed -e "s|@FLAVOUR@|%{flavour}|g" \
 
 mkdir -p $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/
 
+%ifnarch aarch64
 %if "%{flavour}" == "testing"
 sed -e "s|@FLAVOUR@|testing|g" \
 %else
@@ -42,6 +43,7 @@ sed -e "s|@FLAVOUR@|devel|g" \
     -e "s|sailfishos_%%(release)|sailfish_latest_%%(arch)|g" \
 %endif
     adaptation-community-common.ini > $RPM_BUILD_ROOT/%{_datadir}/ssu/features.d/adaptation-community-common.ini
+%endif
 %endif
 
 %files
