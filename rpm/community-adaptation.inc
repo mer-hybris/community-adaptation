@@ -1,7 +1,7 @@
 Summary:        Community HW adaptation setup, %{flavour} flavour
 License:        BSD-3-Clause
 Name:           community-adaptation-%{flavour}
-Version:        0.0.1
+Version:        0.0.3
 Release:        1
 Provides:       community-adaptation
 Source0:        %{name}-%{version}.tar.bz2
